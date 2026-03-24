@@ -1,34 +1,76 @@
 body {
+  margin: 0;
   font-family: Arial;
-  background: #111;
+  background: #0f0f0f;
   color: white;
-  text-align: center;
 }
 
+/* HEADER */
 header {
-  background: orange;
-  padding: 15px;
-}
-
-.hero {
-  padding: 40px;
-}
-
-#menu {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.7);
+  position: fixed;
+  width: 100%;
+}
+
+header a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('https://source.unsplash.com/1600x900/?restaurant,food') center/cover;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-.card {
-  background: #222;
-  margin: 10px;
-  padding: 10px;
+.overlay {
+  text-align: center;
+  background: rgba(0,0,0,0.6);
+  padding: 40px;
   border-radius: 10px;
-  width: 200px;
+}
+
+/* BUTTON */
+.btn {
+  background: orange;
+  padding: 10px 20px;
+  color: black;
+  text-decoration: none;
+}
+
+/* SECTION */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* MENU */
+#menu-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #1a1a1a;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card img {
   width: 100%;
-  border-radius: 10px;
+  height: 150px;
+  object-fit: cover;
 }
