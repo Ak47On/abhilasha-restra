@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Admin Panel</title>
-  <link rel="stylesheet" href="css/style.css">
+<title>Admin Panel</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <h1>Admin Panel</h1>
 
-<input type="text" id="name" placeholder="Item Name">
-<input type="number" id="price" placeholder="Price">
+<input id="name" placeholder="Item Name">
+<input id="price" placeholder="Price">
+
 <select id="status">
-  <option value="Available">Available</option>
-  <option value="Not Available">Not Available</option>
+<option>Available</option>
+<option>Not Available</option>
 </select>
 
-<button onclick="addItem()">Add Item</button>
+<select id="image">
+<option value="images/paneer/paneer-chilli.jpg">Paneer Chilli</option>
+<option value="images/paneer/paneer-butter-masala.jpg">Paneer Butter Masala</option>
+<option value="images/chinese/veg-manchurian.jpg">Veg Manchurian</option>
+<option value="images/chinese/hakka-noodles.jpg">Hakka Noodles</option>
+<option value="images/thali/veg-thali.jpg">Veg Thali</option>
+</select>
+
+<button onclick="add()">Add Item</button>
 
 <script src="js/admin.js"></script>
 </body>
