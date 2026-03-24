@@ -1,16 +1,15 @@
-fetch('data/menu.json')
-  .then(res => res.json())
-  .then(data => {
-    let container = document.getElementById('menu-container');
+let data = JSON.parse(localStorage.getItem("menu")) || [];
 
-    data.forEach(item => {
-      if(item.status === "Available"){
-        container.innerHTML += `
-          <div class="card">
-            <h3>${item.name}</h3>
-            <p>₹${item.price}</p>
-          </div>
-        `;
-      }
-    });
-  });
+let menu = document.getElementById("menu");
+
+data.forEach(item => {
+  if(item.status === "Available"){
+    menu.innerHTML += `
+      <div class="card">
+        <img src="${item.image}">
+        <h3>${item.name}</h3>
+        <p>₹${item.price}</p>
+      </div>
+    `;
+  }
+});
