@@ -1,24 +1,19 @@
-function addItem(){
-  let name = document.getElementById('name').value;
-  let price = document.getElementById('price').value;
-  let status = document.getElementById('status').value;
+function add(){
+  let name = document.getElementById("name").value;
+  let price = document.getElementById("price").value;
+  let status = document.getElementById("status").value;
+  let image = document.getElementById("image").value;
 
-  let newItem = {
+  let data = JSON.parse(localStorage.getItem("menu")) || [];
+
+  data.push({
     name: name,
     price: price,
-    status: status
-  };
+    status: status,
+    image: image
+  });
 
-  fetch('data/menu.json')
-    .then(res => res.json())
-    .then(data => {
-      data.push(newItem);
+  localStorage.setItem("menu", JSON.stringify(data));
 
-      fetch('data/menu.json', {
-        method: 'POST',
-        body: JSON.stringify(data)
-      });
-
-      alert("Item Added");
-    });
+  alert("Item Added ✅");
 }
